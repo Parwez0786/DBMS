@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <title>Login</title>
+    
+    <style>
+      body{
+       height: 100vh;
+       width: 100vw;
+ background-color: white;
+      }
+     
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+
+      form {
+        width: 400px;
+        margin: 0 auto;
+        padding: 30px;
+       opacity: 1;
+  
+      background-color: rgb(243, 243, 243);
+        border-radius: 10px;
+      }
+
+      label {
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 10px;
+        
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: #000000;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+       
+        padding: 12px 20px;
+        background-color: #6ebbeb;
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      img{
+        height:100vh;
+        width: 100vw;
+      }
+      label{
+        text-transform: capitalize;
+        color: #b08585;
+      }
+      a{
+        text-decoration: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px 20px;
+        background-color: #52b6d7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+        .forms{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 20px;
+        text-transform: uppercase;
+
+        }
+        h1{
+          color: rgb(255, 0, 106);
+        }
+        img{
+          height:20px;
+          width: 20px;
+        }
+        .social_account{
+          display: flex;
+          height: 30px;
+          align-items: center;
+          justify-content: center;
+          margin-block-start: 10px;
+          padding: 10px 10px;
+        }
+        a{
+          margin-left: 30px;
+        }
+        h1{
+          color: #92a5b0;
+        }
+        .no-arrows::-webkit-outer-spin-button,
+.no-arrows::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-arrows {
+  -moz-appearance: textfield;
+}
+    </style>
+  </head>
+  <body>
+     
+    <div class="forms">
+        <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';"> {{message}}  &times;</span>
+    </div>
+
+    </div>
+
+
+    <div class="main">
+
+    
+     <div class="container">
+
+     </div>
+     <div class="container2">
+    <h1>LOGIN</h1>
+    
+    <form action="/api/loginauth/login" method="post" name="login">
+      {{!-- <label for="custid">enrollment</label> --}}
+      
+      <input type="text" id="username" name="custid" placeholder="Enrollment Number"><br><br>
+
+      {{!-- <label for="password">Password:</label> --}}
+      <input type="password" id="password" name="password"placeholder="&#61442;"><br><br>
+
+      <input id="btn" type="submit" value="Login">
+      <button><span>Don't have an account?</span><a href="register" >Register</a></button>
+      
+
+      <button><a href="/api/auth/forget-password/" >Forget Password</a></button>
+  <div class="social_account">
+       <h4>Sign in With Socail Account</h1>
+       <a href="/auth/google" ><img src="images/google.png" alt=""></a>
+       <a href="/auth/facebook" ><img src="images/facebook.png" alt=""></a>
+       <a href="/auth/github" ><img src="images/github-logo.png" alt=""></a>
+  </div>
+
+      
+    </form>
+    </div>
+     </div>
+     <script>
+    
+    console.log({{email}});
+
+     </script>
+  </body>
+</html>

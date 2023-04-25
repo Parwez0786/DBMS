@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>Stock Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .stock-container {
+            display: inline-block;
+            position: relative;
+            margin: 5px auto;
+            border: 2px solid #333;
+            width: 30%;
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .stock-header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            border-radius:
+                10px;
+        }
+
+        .stock-units {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stock-change {
+            font-size: 1.2rem;
+            margin-bottom:
+                0;
+        }
+
+       
+        .stock-positive {
+            color: green;
+        }
+
+        .stock-negative {
+            color: red;
+        }
+
+        .insideBtn {
+            color: #f0f0f0;
+            text-decoration: none;
+            border: 2px solid #333;
+            background-color: #e9780d;
+            margin: 2px;
+            padding: 4px 4px;
+            border-radius: 5px;
+        }
+        .container{
+            margin: 0px auto;
+            justify-self: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Invested Stocks</h1>
+        <div class="containers">
+            {{#each resultWithProfit}}
+            <div class="stock-container" id="par">
+                <div class="stock-header">{{this.name}}</div>
+                <p>{{this.id}}</p>
+                <div class="stock-units">Units Holding: {{this.units}}</div>
+                <div class="stock-units">Investment: <span style="color:#e9780d">&#8377;{{this.amt_invested}}</span></div>
+                <div class="stock-units">Current Value: <span style="color:purple;">&#8377;{{this.currValue}}</span></div>
+                {{#if flagProfit}}
+                        <div class="stock-units" >Gain/Loss: <span style="color:Green;">{{this.profit}}%</span></div>
+                    {{else}}
+                        <div class="stock-units" >Gain/Loss: <span style="color:red;">{{this.profit}}%</span></div>
+
+                {{/if}}
+                <br>
+                <a class="insideBtn" href="/api/sell/sellStocks?id={{this.id}}">SELL</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <script>
+       
+
+    </script>
+</body>
+
+</html>
